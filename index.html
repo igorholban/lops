@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>If Else</title>
+    <link rel="stylesheet" href="css\styles.css">
+    <script src="js\js.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <form action="" class="col-12">
+                <div class="form-group col-12">
+                    <small id="names">NAMES</small>
+                    <small id="names1"></small>
+                    <div class="col-6">
+
+                        <label for="username">Your Name Please (Longer than 2 characters)</label>
+                        <input type="text" placeholder="your name" class="form-control col-12" id="username" onchange="namelength()" onfocus="focusare(this)" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="usersecondname">Your Second name Please (Longer than 2 characters)</label>
+                        <input type="text" placeholder="your second name" class="form-control col-12" id="usersecondname" onchange="secondnamelength()" onfocus="focusare(this)" required>
+                    </div>
+                </div>
+                <!-- ####################EMAIL################################ -->
+                <div class="form-group col-12">
+                    <small id="emailplace">EMAIL</small>
+                    <div class="col-6">
+
+                        <label for="email">Your Email Please</label>
+                        <input type="email" placeholder="email" class="form-control col-12" id="email" onfocus="focusare(this)" onchange="checkemail()" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="emailconfirm">Confirm Email Please</label>
+                        <input type="email" placeholder="confirm email" class="form-control col-12" id="emailconfirm" onfocus="focusare(this)" onchange="checkemail()" required>
+                    </div>
+                </div>
+
+                <!-- ####################EMAIL################################ -->
+
+                <!-- ####################PASS################################ -->
+
+                <div class="form-group col-12">
+                    <small id="passplace">PASWORDS</small>
+                    <div class="col-6">
+
+                        <label for="password">Your Password</label>
+                        <input type="password" placeholder="your password" class="form-control col-12" id="password" onfocus="focusare(this)" onchange="checkpass()">
+                    </div>
+                    <div class="col-6">
+                        <label for="password1">Confirm Pasword</label>
+                        <input type="password" placeholder="repeat your password" class="form-control col-12" id="password1" onfocus="focusare(this)" onchange="checkpass()">
+                    </div>
+                </div>
+                <!-- ####################PASS################################ -->
+                <!-- ####################GENDER################################ -->
+                <label class="custom-control custom-radio">
+                <input id="radio1" name="radio" type="radio" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Male</span>
+            </label>
+                <label class="custom-control custom-radio">
+                <input id="radio2" name="radio" type="radio" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Female</span>
+            </label>
+
+                <p id="place1"></p>
+                <p id="plce2"></p>
+
+                <!-- ####################GENDER################################ -->
+                <!-- ####################AGE################################ -->
+                <div class="form-group col-12">
+                    <small id="ageplace">AGE</small>
+                    <div class="col-6">
+
+                        <label for="age">Your Age Please</label>
+                        <input type="number" placeholder="your age" class="form-control col-12" id="age" onfocus="focusare(this)" onchange="checkage()" required>
+                    </div>
+
+                </div>
+
+        </div>
+        <button class="btn btn-success" type="submit">SUBMIT</button>
+        </form>
+    </div>
+
+
+
+
+    <script>
+        var succesname = "<div class='alert alert-success' role='alert'> <strong>Cool!</strong> You have a nice name length</div>";
+        var warningname = "<div class='alert alert-warning' role='alert'> <strong>Ops!</strong> You need A good name Length</div>";
+        var succesname1 = "<div class='alert alert-success' role='alert'><strong>Cool!</strong> You have a nice Second name length</div>";
+        var warningname1 = "<div class='alert alert-warning' role='alert'><strong>Ops!</strong> You need A good Second name Length</div>";
+        var succesemail = "<div class='alert alert-success' role='alert'><strong>Cool!</strong> Your Email does Match</div>";
+        var failemail = "<div class='alert alert-warning' role='alert'><strong>Ops!</strong> Your Email does NOT! Match </div>";
+        var succespass = "<div class='alert alert-success' role='alert'><strong>Cool!</strong> Your Pass does Match</div>";
+        var failpass = "<div class='alert alert-warning' role='alert'><strong>Ops!</strong> Your Pass does NOT! Match </div>";
+        var succesage = "<div class='alert alert-success' role='alert'><strong>Cool!</strong> Your are allowed to enter</div>";
+        var failage = "<div class='alert alert-warning' role='alert'><strong>Ops!</strong> Sorry Your are too Young </div>";
+
+
+
+        function checkemail() {
+            var email = document.getElementById("email").value;
+            var emailconfirm = document.getElementById("emailconfirm").value;
+
+            if (email === emailconfirm) {
+                document.getElementById("emailplace").innerHTML = succesemail;
+                document.getElementById("email").style.backgroundColor = "#A4CA86";
+                document.getElementById("emailconfirm").style.backgroundColor = "#A4CA86";
+            } else {
+                document.getElementById("emailplace").innerHTML = failemail;
+                document.getElementById("email").style.backgroundColor = "#B6AA73";
+                document.getElementById("emailconfirm").style.backgroundColor = "#B6AA73";
+            }
+        }
+
+        function checkpass() {
+            var pass = document.getElementById("password").value;
+            var passconfirm = document.getElementById("password1").value;
+
+            if (pass === passconfirm) {
+                document.getElementById("passplace").innerHTML = succespass;
+                document.getElementById("password").style.backgroundColor = "#A4CA86";
+                document.getElementById("password1").style.backgroundColor = "#A4CA86";
+            } else {
+                document.getElementById("passplace").innerHTML = failpass;
+                document.getElementById("password").style.backgroundColor = "#B6AA73";
+                document.getElementById("password1").style.backgroundColor = "#B6AA73";
+
+            }
+        }
+
+        function checkage() {
+            var age = document.getElementById("age").value;
+            if (age >= 18) {
+                document.getElementById("ageplace").innerHTML = succesage;
+                document.getElementById("age").style.backgroundColor = "#A4CA86";
+            } else {
+                document.getElementById("ageplace").innerHTML = failage;
+                document.getElementById("age").style.backgroundColor = "#B6AA73";
+
+            }
+        }
+
+
+
+        function focusare(element) {
+            var x = element.id;
+            document.getElementById(x).style.backgroundColor = 'lightgrey';
+            document.getElementById(x).style.fontWeight = 'bold';
+            document.getElementById(x).style.backgroundPositionX = "left";
+
+        }
+
+
+        function namelength() {
+            var namelen = document.getElementById("username").value;
+            if (namelen.length < 3) {
+                document.getElementById("names").innerHTML = warningname;
+                document.getElementById("username").style.backgroundColor = "#B6AA73";
+
+            } else {
+                document.getElementById("names").innerHTML = succesname;
+                document.getElementById("username").style.backgroundColor = "#A4CA86";
+            }
+
+        }
+
+        function secondnamelength() {
+            var namelen = document.getElementById("usersecondname").value;
+            if (namelen.length < 3) {
+                document.getElementById("names1").innerHTML = warningname1;
+                document.getElementById("usersecondname").style.backgroundColor = "#B6AA73";
+            } else {
+                document.getElementById("names1").innerHTML = succesname1;
+                document.getElementById("usersecondname").style.backgroundColor = "#A4CA86";
+            }
+        }
+    </script>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+
+</html>
