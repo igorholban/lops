@@ -10,84 +10,11 @@
 
 <body>
 
-    <div class="container">
-        <div class="row">
-            <form action="" class="col-12">
-                <div class="form-group col-12">
-                    <small id="names">NAMES</small>
-                    <small id="names1"></small>
-                    <div class="col-6">
 
-                        <label for="username">Your Name Please (Longer than 2 characters)</label>
-                        <input type="text" placeholder="your name" class="form-control col-12" id="username" onchange="namelength()" onfocus="focusare(this)" required>
-                    </div>
-                    <div class="col-6">
-                        <label for="usersecondname">Your Second name Please (Longer than 2 characters)</label>
-                        <input type="text" placeholder="your second name" class="form-control col-12" id="usersecondname" onchange="secondnamelength()" onfocus="focusare(this)" required>
-                    </div>
-                </div>
-                <!-- ####################EMAIL################################ -->
-                <div class="form-group col-12">
-                    <small id="emailplace">EMAIL</small>
-                    <div class="col-6">
 
-                        <label for="email">Your Email Please</label>
-                        <input type="email" placeholder="email" class="form-control col-12" id="email" onfocus="focusare(this)" onchange="checkemail()" required>
-                    </div>
-                    <div class="col-6">
-                        <label for="emailconfirm">Confirm Email Please</label>
-                        <input type="email" placeholder="confirm email" class="form-control col-12" id="emailconfirm" onfocus="focusare(this)" onchange="checkemail()" required>
-                    </div>
-                </div>
 
-                <!-- ####################EMAIL################################ -->
 
-                <!-- ####################PASS################################ -->
 
-                <div class="form-group col-12">
-                    <small id="passplace">PASWORDS</small>
-                    <div class="col-6">
-
-                        <label for="password">Your Password</label>
-                        <input type="password" placeholder="your password" class="form-control col-12" id="password" onfocus="focusare(this)" onchange="checkpass()">
-                    </div>
-                    <div class="col-6">
-                        <label for="password1">Confirm Pasword</label>
-                        <input type="password" placeholder="repeat your password" class="form-control col-12" id="password1" onfocus="focusare(this)" onchange="checkpass()">
-                    </div>
-                </div>
-                <!-- ####################PASS################################ -->
-                <!-- ####################GENDER################################ -->
-                <label class="custom-control custom-radio">
-                <input id="radio1" name="radio" type="radio" class="custom-control-input">
-                <span class="custom-control-indicator"></span>
-                <span class="custom-control-description">Male</span>
-            </label>
-                <label class="custom-control custom-radio">
-                <input id="radio2" name="radio" type="radio" class="custom-control-input">
-                <span class="custom-control-indicator"></span>
-                <span class="custom-control-description">Female</span>
-            </label>
-
-                <p id="place1"></p>
-                <p id="plce2"></p>
-
-                <!-- ####################GENDER################################ -->
-                <!-- ####################AGE################################ -->
-                <div class="form-group col-12">
-                    <small id="ageplace">AGE</small>
-                    <div class="col-6">
-
-                        <label for="age">Your Age Please</label>
-                        <input type="number" placeholder="your age" class="form-control col-12" id="age" onfocus="focusare(this)" onchange="checkage()" required>
-                    </div>
-
-                </div>
-
-        </div>
-        <button class="btn btn-success" type="submit">SUBMIT</button>
-        </form>
-    </div>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
