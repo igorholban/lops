@@ -11,6 +11,7 @@
 <body>
 
     <p id="alert"></p>
+    <p id="alert1"></p>
     <p id="colourList"></p>
 
     <script>
@@ -36,7 +37,7 @@
         var warning = '<div class="alert alert-warning" role="alert"><strong>Warning!</strong> Better check yourself, youre not looking too good.</div>';
         var danger = '<div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> Change a few things up and try submitting again.</div>';
 
-        // var tweets = [warning, success, info, danger]
+        var tweets = [warning, success, info, danger]
 
 
 
@@ -74,9 +75,12 @@
         var color = ["Red", "Yellow", "Blue"];
 
         var x = 0;
-        var space = " ";
+        var space = "";
         while (x < color.length) {
-            document.getElementById("alert").innerHTML = "<p>" + color[x] + "</p>";
+            space = space + "<p>" + color[x] + "</p>";
+            document.getElementById("alert").innerHTML = space;
+            // document.getElementById("alert1").innerHTML = "<p>" + color + "</p>";
+            document.getElementById("colourList").innerHTML = tweets;
             x++
         }
     </script>
