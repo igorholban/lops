@@ -8,89 +8,139 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="storeValue()">
 
-    <p id="alert"></p>
+    <!-- <p id="alert"></p>
     <p id="alert1"></p>
     <p id="colourList"></p>
+ -->
 
-    <script>
-        // var x = ["Red", "Yellow", "Blue"];
-
-        // var r = '';
-
-        // for (var i = 0; i < x.length; i++) {
-
-        //     r = r + x[i] + " ";
-
-
-        // }
-        // document.getElementById("colourList").innerHTML = r;
+    <!-- ##########################################GUESS GAME###################################################################### -->
 
 
 
-        // ###############################################################################################################################################################
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron">
+                    <h1 class="display-3 text-center"> Guess Game</h1>
+                    <p class="lead text-center">Input a number from 1-10 in text field and them press GUESS button so the computer will scan through and find the number </p>
+                    <hr class="my-4">
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-12 col-form-label text-center">Input Your Number</label>
+                        <input type="text" id="input">
+                        <hr class="my-4">
+                        <div class="col-12">
+
+                            <h1 id="input" class="text-center"> </h1>
+
+                            <div class=" text-center">
+                                <a class="btn btn-primary btn-lg btn-block" id="btn" href="#" role="button" onclick="randomGuess()">GUEEEEEEESSSSSSS</a>
+                            </div>
+                            <div id="answer" class="text-center">
+
+                            </div>
+                            <div id="answer1" class="text-center">
+
+                            </div>
+                            <div id="answer2" class="text-center">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-        var success = '<div class="alert alert-success" role="alert"> <strong > Well done! < /strong> You successfully read this important alert message. </div>';
-        var info = '<div class="alert alert-info" role="alert"><strong>Heads up!</strong> This alert needs your attention, but its not super important.</div>';
-        var warning = '<div class="alert alert-warning" role="alert"><strong>Warning!</strong> Better check yourself, youre not looking too good.</div>';
-        var danger = '<div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> Change a few things up and try submitting again.</div>';
 
-        var tweets = [warning, success, info, danger]
-
-
-
-        // for (i = 0; i < tweets.length; i++) {
-        //     document.getElementById("alert").innerHTML = tweets;
-
-        // }
-        // document.write(tweets);
+        <script>
+            // ###############################################GUESs GAME#######################################################################################
+            var mouseClick = 0;
+            var counter = 0;
+            var success = '<div class="alert alert-success" role="alert"> <strong> Found it ! </strong> You are holding ' + input + ' Fingers </div>';
+            var info = '<div class="alert alert-info" role="alert"><strong>Try Again!!!</strong></div>'
 
 
-        // #######################################################################################################################################################################
 
-        // var talerts = [];
-        // for (var i = 0; i < 3; i++) {
-        //     var value = prompt("Input array: ");
-        //     talerts.push(value);
-        //     console.log(talerts);
+            function randomGuess() {
+                var input = document.getElementById("input").value;
+                var guess = Math.floor((Math.random() * 10) + 1);
 
-        // }
-        // alert(talerts);
-
-
-        //     var color = ["Red", "Yellow", "Blue"];
-        //     var r = 0;
-        //     colorString = '';
-        //     while (r < color.length) {
-
-        //         colorString = colorString + "<p>" + color[r] + "</p>";
-
-        //         r++;
-        //     }
-        //     document.getElementById("alert").innerHTML = colorString;
-        //
-
-        var color = ["Red", "Yellow", "Blue"];
-
-        var x = 0;
-        var space = "";
-        while (x < color.length) {
-            space = space + "<p>" + color[x] + "</p>";
-            document.getElementById("alert").innerHTML = space;
-            // document.getElementById("alert1").innerHTML = "<p>" + color + "</p>";
-            document.getElementById("colourList").innerHTML = tweets;
-            x++
-        }
-    </script>
+                if (input == guess) {
+                    document.getElementById('answer1').innerHTML = success;
+                    document.getElementById('answer').innerHTML = guess;
+                } else {
+                    document.getElementById('answer').innerHTML = guess;
+                    document.getElementById('answer1').innerHTML = info;
+                }
+            }
 
 
 
 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+
+            // ###############################################GUESs GAME#######################################################################################
+
+            // var x = ["Red", "Yellow", "Blue"];
+
+            // var r = '';
+
+            // for (var i = 0; i < x.length; i++) {
+
+            //     r = r + x[i] + " ";
+
+
+            // }
+            // document.getElementById("colourList").innerHTML = r;
+            // ###############################################################################################################################################################
+            // var success = '<div class="alert alert-success" role="alert"> <strong > Well done! < /strong> You successfully read this important alert message. </div>';
+            // var info = '<div class="alert alert-info" role="alert"><strong>Heads up!</strong> This alert needs your attention, but its not super important.</div>';
+            // var warning = '<div class="alert alert-warning" role="alert"><strong>Warning!</strong> Better check yourself, youre not looking too good.</div>';
+            // var danger = '<div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> Change a few things up and try submitting again.</div>';
+            // var tweets = [warning, success, info, danger]
+            // for (i = 0; i < tweets.length; i++) {
+            //     document.getElementById("alert").innerHTML = tweets;
+            // }
+            // document.write(tweets);
+            // #######################################################################################################################################################################
+            // var talerts = [];
+            // for (var i = 0; i < 3; i++) {
+            //     var value = prompt("Input array: ");
+            //     talerts.push(value);
+            //     console.log(talerts);
+            // }
+            // alert(talerts);
+            //     var color = ["Red", "Yellow", "Blue"];
+            //     var r = 0;
+            //     colorString = '';
+            //     while (r < color.length) {
+            //         colorString = colorString + "<p>" + color[r] + "</p>";
+            //         r++;
+            //     }
+            //     document.getElementById("alert").innerHTML = colorString;
+            //
+            // var color = ["Red", "Yellow", "Blue"];
+            // var x = 0;
+            // var space = "";
+            // while (x < color.length) {
+            //     space = space + "<p>" + color[x] + "</p>";
+            //     document.getElementById("alert").innerHTML = space;
+            //     // document.getElementById("alert1").innerHTML = "<p>" + color + "</p>";
+            //     document.getElementById("colourList").innerHTML = tweets;
+            //     x++
+            // }
+        </script>
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 
 </html>
